@@ -66,7 +66,7 @@
       margin: 40px auto 20px;
     }
 
-    /* شريط الخصم الطولي */
+    /* شريط الخصم */
     .offer-strip-vertical {
       position: fixed;
       top: 100px;
@@ -84,16 +84,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: scrollText 4s linear infinite;
+      animation: scrollText 2s linear infinite;
       font-weight: bold;
       font-size: 14px;
     }
 
     .offer-text span {
-      color: red;
       writing-mode: vertical-rl;
       text-orientation: mixed;
-      margin: 10px 0;
+      margin: 8px 0;
+      animation: blinkColor 1s infinite alternate;
     }
 
     @keyframes scrollText {
@@ -104,6 +104,11 @@
         transform: translateY(-100%);
       }
     }
+
+    @keyframes blinkColor {
+      0% { color: red; }
+      100% { color: black; }
+    }
   </style>
 </head>
 <body>
@@ -111,6 +116,10 @@
   <!-- شريط الخصم -->
   <div class="offer-strip-vertical">
     <div class="offer-text">
+      <span>OFFER 10%</span>
+      <span>OFFER 10%</span>
+      <span>OFFER 10%</span>
+      <span>OFFER 10%</span>
       <span>OFFER 10%</span>
       <span>OFFER 10%</span>
       <span>OFFER 10%</span>
