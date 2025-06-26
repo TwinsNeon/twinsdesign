@@ -13,7 +13,6 @@
       padding: 40px 20px;
     }
     h1 {
-      color: #e63946;
       font-size: 2.5em;
     }
     p {
@@ -69,7 +68,10 @@
 </head>
 <body>
 
-  <h1>Twins Design</h1>
+  <h1 style="font-size: 2.5em; color: white;">
+    Tw<span style="color:white">i</span>ns Des<span style="color:white">i</span>gn<span style="color:#e63946;">.</span>
+  </h1>
+
   <p>Creative visuals that speak your brand. Youthful energy × Classic taste.</p>
 
   <a class="social" href="https://wa.me/201118222944" target="_blank">📲 WhatsApp</a>
@@ -78,7 +80,6 @@
 
   <h2>Contact Form</h2>
   <form action="https://formsubmit.co/ahmed.faresask221@gmail.com" method="POST">
-    <!-- إعدادات فورمسابميت -->
     <input type="hidden" name="_next" value="https://twinsdesign.vercel.app?success=Your+message+has+been+sent+successfully!" />
     <input type="hidden" name="_captcha" value="false" />
 
@@ -89,7 +90,6 @@
     <button type="submit">Send</button>
   </form>
 
-  <!-- رسالة التأكيد بعد الإرسال -->
   <script>
     const urlParams = new URLSearchParams(window.location.search);
     const successMsg = urlParams.get('success');
