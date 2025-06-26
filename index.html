@@ -14,8 +14,29 @@
       position: relative;
     }
 
+    /* شريط اللوجو العلوي */
+    .top-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60px;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .top-header img {
+      height: 45px;
+      object-fit: contain;
+    }
+
     h1 {
       font-size: 2.5em;
+      margin-top: 80px;
     }
 
     p {
@@ -116,6 +137,11 @@
 </head>
 <body>
 
+  <!-- الهيدر -->
+  <div class="top-header">
+    <img src="twins-logo.png" alt="Twins Logo" />
+  </div>
+
   <!-- شريط الخصم -->
   <div class="offer-strip-vertical">
     <div class="offer-text">
@@ -126,7 +152,8 @@
     </div>
   </div>
 
-  <h1 style="font-size: 2.5em; color: white;">
+  <!-- العنوان -->
+  <h1 style="color: white;">
     Tw<span style="color:white">i</span>ns Des<span style="color:white">i</span>gn<span style="color:#e63946;">.</span>
   </h1>
 
