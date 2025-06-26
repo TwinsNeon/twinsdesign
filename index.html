@@ -11,6 +11,7 @@
       text-align: center;
       font-family: sans-serif;
       padding: 40px 20px;
+      position: relative;
     }
     h1 {
       font-size: 2.5em;
@@ -64,9 +65,33 @@
       width: fit-content;
       margin: 40px auto 20px;
     }
+
+    /* شريط الخصم */
+    .offer-strip {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background-color: white;
+      padding: 10px 15px;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      animation: blinkColor 1s infinite alternate;
+      z-index: 999;
+    }
+
+    @keyframes blinkColor {
+      0% { color: red; }
+      100% { color: black; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- شريط العرض -->
+  <div class="offer-strip">10% OFFER</div>
 
   <h1 style="font-size: 2.5em; color: white;">
     Tw<span style="color:white">i</span>ns Des<span style="color:white">i</span>gn<span style="color:#e63946;">.</span>
@@ -74,9 +99,9 @@
 
   <p>Creative visuals that speak your brand. Youthful energy × Classic taste.</p>
 
-  <a class="social" href="https://wa.me/201118222944" target="_blank">📲 WhatsApp</a>
-  <a class="social" href="https://www.instagram.com/twins_neon?igsh=cG1mOW1tNWcxenRw&utm_source=qr" target="_blank">📸 Instagram</a>
-  <a class="social" href="https://www.facebook.com/share/1BqqpP2BkM/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
+  <a class="social" href="https://wa.me/201118222944" target="_blank">WhatsApp</a>
+  <a class="social" href="https://www.instagram.com/twins_neon?igsh=cG1mOW1tNWcxenRw&utm_source=qr" target="_blank">Instagram</a>
+  <a class="social" href="https://www.facebook.com/share/1BqqpP2BkM/?mibextid=wwXIfr" target="_blank">Facebook</a>
 
   <h2>Contact Form</h2>
   <form action="https://formsubmit.co/ahmed.faresask221@gmail.com" method="POST">
