@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,33 +11,72 @@
       color: white;
       text-align: center;
       font-family: sans-serif;
-      padding: 40px 20px;
+      padding: 100px 20px 40px;
+      margin: 0;
       position: relative;
     }
 
-    /* شريط اللوجو العلوي */
-    .top-header {
+    /* الهيدر الجديد زي customneon */
+    .custom-header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
+      height: 60px;
       background-color: #ffffff;
       display: flex;
       align-items: center;
-      justify-content: center;
-      height: 60px;
+      justify-content: space-between;
+      padding: 0 20px;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
-    .top-header img {
+    .logo-center img {
       height: 45px;
+    }
+
+    .logo-center {
+      flex: 1;
+      text-align: center;
+    }
+
+    .left-icon, .right-icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .menu-icon {
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    .icon {
+      width: 22px;
+      height: 22px;
       object-fit: contain;
+      cursor: pointer;
+    }
+
+    .cart-container {
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: black;
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      padding: 3px 6px;
     }
 
     h1 {
       font-size: 2.5em;
-      margin-top: 80px;
+      margin-top: 40px;
     }
 
     p {
@@ -137,9 +177,21 @@
 </head>
 <body>
 
-  <!-- الهيدر -->
-  <div class="top-header">
-    <img src="twins-logo.png" alt="Twins Logo" />
+  <!-- الهيدر الجديد -->
+  <div class="custom-header">
+    <div class="left-icon">
+      <span class="menu-icon">&#9776;</span>
+    </div>
+    <div class="logo-center">
+      <img src="twins-logo.png" alt="Twins Logo" />
+    </div>
+    <div class="right-icons">
+      <img src="search-icon.png" alt="Search Icon" class="icon" />
+      <div class="cart-container">
+        <img src="cart-icon.png" alt="Cart Icon" class="icon" />
+        <span class="cart-count">0</span>
+      </div>
+    </div>
   </div>
 
   <!-- شريط الخصم -->
@@ -153,7 +205,7 @@
   </div>
 
   <!-- العنوان -->
-  <h1 style="color: white;">
+  <h1>
     Tw<span style="color:white">i</span>ns Des<span style="color:white">i</span>gn<span style="color:#e63946;">.</span>
   </h1>
 
@@ -167,7 +219,6 @@
   <form action="https://formsubmit.co/ahmed.faresask221@gmail.com" method="POST">
     <input type="hidden" name="_next" value="https://twinsdesign.vercel.app?success=Your+message+has+been+sent+successfully!" />
     <input type="hidden" name="_captcha" value="false" />
-
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
     <input type="text" name="phone" placeholder="Your Phone Number" />
