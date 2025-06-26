@@ -6,22 +6,22 @@
   <title>Twins Design</title>
   <style>
     body {
-      background-color: #121212;
+      background-color: #0A0F0D;
       color: white;
       text-align: center;
       font-family: sans-serif;
       padding: 40px 20px;
     }
-    img {
-      max-width: 200px;
-      margin-bottom: 20px;
+    h1 {
+      color: #e63946;
+      font-size: 2.5em;
     }
     p {
       color: #ccc;
       font-size: 1.1em;
       margin-bottom: 30px;
     }
-    a {
+    a.social {
       display: block;
       margin: 10px auto;
       padding: 15px 20px;
@@ -32,13 +32,71 @@
       border-radius: 10px;
       text-decoration: none;
     }
+    form {
+      max-width: 400px;
+      margin: 50px auto;
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background-color: #e63946;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    h2 {
+      background-color: #e63946;
+      padding: 10px;
+      border-radius: 10px;
+      width: fit-content;
+      margin: 40px auto 20px;
+    }
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Twins Logo">
+
+  <h1>Twins Design</h1>
   <p>Creative visuals that speak your brand. Youthful energy × Classic taste.</p>
-  <a href="https://wa.me/201118222944" target="_blank">📲 WhatsApp</a>
-  <a href="https://www.instagram.com/twins_neon?igsh=cG1mOW1tNWcxenRw&utm_source=qr" target="_blank">📸 Instagram</a>
-  <a href="https://www.facebook.com/share/1BqqpP2BkM/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
+
+  <a class="social" href="https://wa.me/201118222944" target="_blank">📲 WhatsApp</a>
+  <a class="social" href="https://www.instagram.com/twins_neon?igsh=cG1mOW1tNWcxenRw&utm_source=qr" target="_blank">📸 Instagram</a>
+  <a class="social" href="https://www.facebook.com/share/1BqqpP2BkM/?mibextid=wwXIfr" target="_blank">📘 Facebook</a>
+
+  <h2>Contact Form</h2>
+  <form action="https://formsubmit.co/ahmed.faresask221@gmail.com" method="POST">
+    <!-- إعدادات فورمسابميت -->
+    <input type="hidden" name="_next" value="https://twinsdesign.vercel.app?success=Your+message+has+been+sent+successfully!" />
+    <input type="hidden" name="_captcha" value="false" />
+
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="text" name="phone" placeholder="Your Phone Number" />
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+
+  <!-- رسالة التأكيد بعد الإرسال -->
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const successMsg = urlParams.get('success');
+    if (successMsg) {
+      alert(successMsg);
+    }
+  </script>
+
 </body>
 </html>
