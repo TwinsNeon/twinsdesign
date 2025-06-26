@@ -66,35 +66,57 @@
       margin: 40px auto 20px;
     }
 
-    /* شريط الخصم الطويل */
+    /* شريط الخصم الطولي */
     .offer-strip-vertical {
       position: fixed;
       top: 100px;
       right: 0;
-      width: 40px;
-      height: 350px;
+      width: 25px;
+      height: 400px;
       background-color: white;
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
-      writing-mode: vertical-rl;
-      text-align: center;
-      padding: 10px 0;
-      font-weight: bold;
-      font-size: 16px;
-      animation: blinkColor 1s infinite alternate;
+      overflow: hidden;
       z-index: 999;
     }
 
-    @keyframes blinkColor {
-      0% { color: red; }
-      100% { color: black; }
+    .offer-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: scrollText 4s linear infinite;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .offer-text span {
+      color: red;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      margin: 10px 0;
+    }
+
+    @keyframes scrollText {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- شريط الخصم الطولي -->
-  <div class="offer-strip-vertical">10% OFFER</div>
+  <!-- شريط الخصم -->
+  <div class="offer-strip-vertical">
+    <div class="offer-text">
+      <span>OFFER 10%</span>
+      <span>OFFER 10%</span>
+      <span>OFFER 10%</span>
+      <span>OFFER 10%</span>
+    </div>
+  </div>
 
   <h1 style="font-size: 2.5em; color: white;">
     Tw<span style="color:white">i</span>ns Des<span style="color:white">i</span>gn<span style="color:#e63946;">.</span>
