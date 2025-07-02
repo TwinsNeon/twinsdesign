@@ -6,11 +6,12 @@
   <title>Twins Design</title>
   <style>
     .right-icons {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  transform: translateX(-40px); /* ← حرّكهم للشمال */
-}
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transform: translateX(-40px); /* ← حرّكهم للشمال */
+    }
+
     body {
       background-color: #0A0F0D;
       color: white;
@@ -54,12 +55,6 @@
     .menu-icon {
       font-size: 28px;
       cursor: pointer;
-    }
-
-    .right-icons {
-      display: flex;
-      align-items: center;
-      gap: 20px;
     }
 
     .icon {
@@ -183,72 +178,4 @@
       0% { color: red; }
       100% { color: black; }
     }
-  </style>
-</head>
-<body>
-
-  <!-- الهيدر -->
-  <div class="custom-header">
-    <div class="left-icon">
-      <span class="menu-icon">&#9776;</span>
-    </div>
-
-    <div class="logo-center">
-      <img src="twins-logo.png" alt="Twins Logo" />
-    </div>
-
- <div class="right-icons">
-  <div class="cart-container">
-    <img src="cart-icon.png" alt="Cart Icon" class="icon" />
-    <span class="cart-count">0</span>
-  </div>
-  <img src="search-icon.png" alt="Search Icon" class="icon" />
-</div>
-  <img src="search-icon.png" alt="Search Icon" class="icon" />
-</div>
-  <img src="search-icon.png" alt="Search Icon" class="icon" />
-</div>
-  </div>
-
-  <!-- شريط الخصم -->
-  <div class="offer-strip-vertical">
-    <div class="offer-text">
-      <span>OFFER 10%</span>
-      <span>OFFER 10%</span>
-      <span>OFFER 10%</span>
-      <span>OFFER 10%</span>
-    </div>
-  </div>
-
-  <!-- العنوان -->
-  <h1>
-    Tw<span style="color:white">i</span>ns Des<span style="color:white">i</span>gn<span style="color:#e63946;">.</span>
-  </h1>
-
-  <p>Creative visuals that speak your brand. Youthful energy × Classic taste.</p>
-
-  <a class="social" href="https://wa.me/201118222944" target="_blank">WhatsApp</a>
-  <a class="social" href="https://www.instagram.com/twins_neon?igsh=cG1mOW1tNWcxenRw&utm_source=qr" target="_blank">Instagram</a>
-  <a class="social" href="https://www.facebook.com/share/1BqqpP2BkM/?mibextid=wwXIfr" target="_blank">Facebook</a>
-
-  <h2>Contact Form</h2>
-  <form action="https://formsubmit.co/ahmed.faresask221@gmail.com" method="POST">
-    <input type="hidden" name="_next" value="https://twinsdesign.vercel.app?success=Your+message+has+been+sent+successfully!" />
-    <input type="hidden" name="_captcha" value="false" />
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <input type="text" name="phone" placeholder="Your Phone Number" />
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send</button>
-  </form>
-
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const successMsg = urlParams.get('success');
-    if (successMsg) {
-      alert(successMsg);
-    }
-  </script>
-
-</body>
-</html>
+  </s
