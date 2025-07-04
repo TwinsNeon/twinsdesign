@@ -10,8 +10,9 @@
       color: white;
       text-align: center;
       font-family: sans-serif;
-      margin: 0;
       padding: 100px 20px 40px;
+      margin: 0;
+      position: relative;
     }
 
     .custom-header {
@@ -35,21 +36,25 @@
     }
 
     .logo-center img {
-      height: 130px;
+      height: 100px; /* ← كبرنا اللوجو */
       margin-top: 5px;
     }
 
+    .left-icon {
+      display: flex;
+      align-items: center;
+    }
+
     .menu-icon {
-      font-size: 30px;
+      font-size: 28px;
       cursor: pointer;
-      color: black;
     }
 
     .right-icons {
       display: flex;
       align-items: center;
       gap: 20px;
-      transform: translateX(-20px);
+      transform: translateX(-20px); /* ← ظبط مكان السلة */
     }
 
     .icon {
@@ -63,7 +68,8 @@
       position: relative;
     }
 
-    .cart-count {
+    /* شيلنا رقم السلة */
+    /* .cart-count {
       position: absolute;
       top: -8px;
       right: -8px;
@@ -72,43 +78,8 @@
       border-radius: 50%;
       font-size: 12px;
       padding: 3px 6px;
-    }
-
-    /* Sidebar */
-    .sidebar {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 80px;
-      z-index: 1001;
-    }
-
-    .sidebar a {
-      padding: 10px 30px;
-      text-decoration: none;
-      font-size: 20px;
-      color: white;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .sidebar a:hover {
-      background-color: #e63946;
-    }
-
-    .closebtn {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-    }
+      z-index: 10;
+    } */
 
     h1 {
       font-size: 2.5em;
@@ -212,79 +183,63 @@
 </head>
 <body>
 
-<!-- Sidebar -->
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">الرئيسية</a>
-  <a href="#">من نحن</a>
-  <a href="#">خدماتنا</a>
-  <a href="#">تواصل معنا</a>
-</div>
-
-<!-- Header -->
-<div class="custom-header">
-  <div class="left-icon">
-    <span class="menu-icon" onclick="openNav()">&#9776;</span>
-  </div>
-
-  <div class="logo-center">
-    <img src="twins-logo.png" alt="Twins Logo" />
-  </div>
-
-  <div class="right-icons">
-    <div class="cart-container">">0</span>
-</div>
-      <img src="cart-icon.png" alt="Cart Icon" class="icon" />
-      
+  <!-- الهيدر -->
+  <div class="custom-header">
+    <div class="left-icon">
+      <span class="menu-icon">&#9776;</span>
     </div>
-    <img src="search-icon.png" alt="Search Icon" class="icon" />
+
+    <div class="logo-center">
+      <img src="twins-logo.png" alt="Twins Logo" />
+    </div>
+
+    <div class="right-icons">
+      <div class="cart-container">
+        <img src="cart-icon.png" alt="Cart Icon" class="icon" />
+      </div>
+      <img src="search-icon.png" alt="Search Icon" class="icon" />
+    </div>
   </div>
-</div>
 
-<!-- Offer Bar -->
-<div class="offer-strip-vertical">
-  <div class="offer-text">
-    <span>OFFER 10%</span>
-    <span>OFFER 10%</span>
-    <span>OFFER 10%</span>
-    <span>OFFER 10%</span>
+  <!-- شريط الخصم -->
+  <div class="offer-strip-vertical">
+    <div class="offer-text">
+      <span>OFFER 10%</span>
+      <span>OFFER 10%</span>
+      <span>OFFER 10%</span>
+      <span>OFFER 10%</span>
+    </div>
   </div>
-</div>
 
-<!-- Main Content -->
-<h1>Tw<span style="color:white">i</span>ns Des<span style="color:white">i</span>gn<span style="color:#e63946;">.</span></h1>
-<p>Creative visuals that speak your brand. Youthful energy × Classic taste.</p>
+  <!-- العنوان -->
+  <h1>
+    Tw<span style="color:white">i</span>ns Des<span style="color:white">i</span>gn<span style="color:#e63946;">.</span>
+  </h1>
 
-<a class="social" href="https://wa.me/201118222944" target="_blank">WhatsApp</a>
-<a class="social" href="https://www.instagram.com/twins_neon?igsh=cG1mOW1tNWcxenRw&utm_source=qr" target="_blank">Instagram</a>
-<a class="social" href="https://www.facebook.com/share/1BqqpP2BkM/?mibextid=wwXIfr" target="_blank">Facebook</a>
+  <p>Creative visuals that speak your brand. Youthful energy × Classic taste.</p>
 
-<h2>Contact Form</h2>
-<form action="https://formsubmit.co/ahmed.faresask221@gmail.com" method="POST">
-  <input type="hidden" name="_next" value="https://twinsdesign.vercel.app?success=Your+message+has+been+sent+successfully!" />
-  <input type="hidden" name="_captcha" value="false" />
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="email" name="email" placeholder="Your Email" required />
-  <input type="text" name="phone" placeholder="Your Phone Number" />
-  <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-  <button type="submit">Send</button>
-</form>
+  <a class="social" href="https://wa.me/201118222944" target="_blank">WhatsApp</a>
+  <a class="social" href="https://www.instagram.com/twins_neon" target="_blank">Instagram</a>
+  <a class="social" href="https://www.facebook.com/share/1BqqpP2BkM" target="_blank">Facebook</a>
 
-<script>
-  function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
-  }
+  <h2>Contact Form</h2>
+  <form action="https://formsubmit.co/ahmed.faresask221@gmail.com" method="POST">
+    <input type="hidden" name="_next" value="https://twinsdesign.vercel.app?success=Your+message+has+been+sent+successfully!" />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="text" name="phone" placeholder="Your Phone Number" />
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send</button>
+  </form>
 
-  function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-  }
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const successMsg = urlParams.get('success');
-  if (successMsg) {
-    alert(successMsg);
-  }
-</script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const successMsg = urlParams.get('success');
+    if (successMsg) {
+      alert(successMsg);
+    }
+  </script>
 
 </body>
 </html>
