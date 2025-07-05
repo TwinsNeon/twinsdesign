@@ -36,7 +36,7 @@
     }
 
     .logo-center img {
-      height: 100px; /* ← كبرنا اللوجو */
+      height: 100px;
       margin-top: 5px;
     }
 
@@ -54,7 +54,7 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      transform: translateX(-20px); /* ← ظبط مكان السلة */
+      transform: translateX(-20px);
     }
 
     .icon {
@@ -67,19 +67,6 @@
     .cart-container {
       position: relative;
     }
-
-    /* شيلنا رقم السلة */
-    /* .cart-count {
-      position: absolute;
-      top: -8px;
-      right: -8px;
-      background-color: black;
-      color: white;
-      border-radius: 50%;
-      font-size: 12px;
-      padding: 3px 6px;
-      z-index: 10;
-    } */
 
     h1 {
       font-size: 2.5em;
@@ -179,14 +166,58 @@
       0% { color: red; }
       100% { color: black; }
     }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #111;
+      padding-top: 60px;
+      transition: left 0.3s ease;
+      z-index: 1100;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar img {
+      width: 150px;
+      margin: 0 auto 20px;
+      display: block;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 15px 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .sidebar a:hover {
+      background-color: #e63946;
+    }
   </style>
 </head>
 <body>
 
-  <!-- الهيدر -->
+  <!-- Sidebar Menu -->
+  <div id="sidebar" class="sidebar">
+    <img src="sidebar-logo.png" alt="Sidebar Logo">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Header -->
   <div class="custom-header">
     <div class="left-icon">
-      <span class="menu-icon">&#9776;</span>
+      <span class="menu-icon" onclick="toggleSidebar()">&#9776;</span>
     </div>
 
     <div class="logo-center">
@@ -201,7 +232,7 @@
     </div>
   </div>
 
-  <!-- شريط الخصم -->
+  <!-- OFFER STRIP -->
   <div class="offer-strip-vertical">
     <div class="offer-text">
       <span>OFFER 10%</span>
@@ -211,11 +242,7 @@
     </div>
   </div>
 
-  <!-- العنوان -->
-  <h1>
-    Tw<span style="color:white">i</span>ns Des<span style="color:white">i</span>gn<span style="color:#e63946;">.</span>
-  </h1>
-
+  <h1>Tw<span style="color:white">i</span>ns Des<span style="color:white">i</span>gn<span style="color:#e63946;">.</span></h1>
   <p>Creative visuals that speak your brand. Youthful energy × Classic taste.</p>
 
   <a class="social" href="https://wa.me/201118222944" target="_blank">WhatsApp</a>
@@ -234,6 +261,10 @@
   </form>
 
   <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+
     const urlParams = new URLSearchParams(window.location.search);
     const successMsg = urlParams.get('success');
     if (successMsg) {
