@@ -2,17 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Twins Design</title>
   <style>
     body {
       background-color: #0A0F0D;
       color: white;
-      text-align: center;
       font-family: sans-serif;
-      padding: 100px 20px 40px;
       margin: 0;
-      position: relative;
     }
 
     .custom-header {
@@ -40,21 +37,16 @@
       margin-top: 5px;
     }
 
-    .left-icon {
-      display: flex;
-      align-items: center;
-    }
-
     .menu-icon {
       font-size: 28px;
       cursor: pointer;
+      color: black;
     }
 
     .right-icons {
       display: flex;
       align-items: center;
       gap: 20px;
-      transform: translateX(-20px);
     }
 
     .icon {
@@ -64,211 +56,78 @@
       cursor: pointer;
     }
 
-    .cart-container {
-      position: relative;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin-top: 40px;
-    }
-
-    p {
-      color: #ccc;
-      font-size: 1.1em;
-      margin-bottom: 30px;
-    }
-
-    a.social {
-      display: block;
-      margin: 10px auto;
-      padding: 15px 20px;
-      background: #e63946;
-      color: white;
-      width: 80%;
-      max-width: 300px;
-      border-radius: 10px;
-      text-decoration: none;
-    }
-
-    form {
-      max-width: 400px;
-      margin: 50px auto;
-      background: #111;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 15px;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1em;
-    }
-
-    button {
-      width: 100%;
-      padding: 15px;
-      background-color: #e63946;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
-      font-size: 1em;
-      cursor: pointer;
-    }
-
-    h2 {
-      background-color: #e63946;
-      padding: 10px;
-      border-radius: 10px;
-      width: fit-content;
-      margin: 40px auto 20px;
-    }
-
-    .offer-strip-vertical {
-      position: fixed;
-      top: 100px;
-      right: 0;
-      width: 25px;
-      height: 400px;
-      background-color: white;
-      border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
-      overflow: hidden;
-      z-index: 999;
-    }
-
-    .offer-text {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: scrollText 6s linear infinite;
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .offer-text span {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      margin: 10px 0;
-      animation: blinkColor 1s infinite alternate;
-    }
-
-    @keyframes scrollText {
-      0% { transform: translateY(100%); }
-      100% { transform: translateY(-100%); }
-    }
-
-    @keyframes blinkColor {
-      0% { color: red; }
-      100% { color: black; }
-    }
-
-    /* Sidebar */
     .sidebar {
-      position: fixed;
-      top: 0;
-      left: -250px;
-      width: 250px;
       height: 100%;
-      background-color: #111;
-      padding-top: 60px;
-      transition: left 0.3s ease;
-      z-index: 1100;
-    }
-
-    .sidebar.active {
+      width: 0;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
       left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
     }
 
     .sidebar img {
-      width: 150px;
+      width: 120px;
       margin: 0 auto 20px;
       display: block;
     }
 
     .sidebar a {
-      display: block;
-      padding: 15px 20px;
-      color: white;
+      padding: 10px 30px;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 0.3s;
     }
 
     .sidebar a:hover {
       background-color: #e63946;
     }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Sidebar Menu -->
-  <div id="sidebar" class="sidebar">
-    <img src="sidebar-logo.png" alt="Sidebar Logo">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <span class="closebtn" onclick="closeNav()">&times;</span>
+    <img src="twins-logo.png" alt="Logo" />
+    <a href="#">الرئيسية</a>
+    <a href="#">أعمالنا</a>
+    <a href="#">تواصل معنا</a>
   </div>
 
   <!-- Header -->
   <div class="custom-header">
-    <div class="left-icon">
-      <span class="menu-icon" onclick="toggleSidebar()">&#9776;</span>
-    </div>
-
+    <span class="menu-icon" onclick="openNav()">&#9776;</span>
     <div class="logo-center">
       <img src="twins-logo.png" alt="Twins Logo" />
     </div>
-
     <div class="right-icons">
-      <div class="cart-container">
-        <img src="cart-icon.png" alt="Cart Icon" class="icon" />
-      </div>
+      <img src="cart-icon.png" alt="Cart Icon" class="icon" />
       <img src="search-icon.png" alt="Search Icon" class="icon" />
     </div>
   </div>
 
-  <!-- OFFER STRIP -->
-  <div class="offer-strip-vertical">
-    <div class="offer-text">
-      <span>OFFER 10%</span>
-      <span>OFFER 10%</span>
-      <span>OFFER 10%</span>
-      <span>OFFER 10%</span>
-    </div>
-  </div>
-
-  <h1>Tw<span style="color:white">i</span>ns Des<span style="color:white">i</span>gn<span style="color:#e63946;">.</span></h1>
-  <p>Creative visuals that speak your brand. Youthful energy × Classic taste.</p>
-
-  <a class="social" href="https://wa.me/201118222944" target="_blank">WhatsApp</a>
-  <a class="social" href="https://www.instagram.com/twins_neon" target="_blank">Instagram</a>
-  <a class="social" href="https://www.facebook.com/share/1BqqpP2BkM" target="_blank">Facebook</a>
-
-  <h2>Contact Form</h2>
-  <form action="https://formsubmit.co/ahmed.faresask221@gmail.com" method="POST">
-    <input type="hidden" name="_next" value="https://twinsdesign.vercel.app?success=Your+message+has+been+sent+successfully!" />
-    <input type="hidden" name="_captcha" value="false" />
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <input type="text" name="phone" placeholder="Your Phone Number" />
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-    <button type="submit">Send</button>
-  </form>
-
+  <!-- JS for sidebar -->
   <script>
-    function toggleSidebar() {
-      document.getElementById("sidebar").classList.toggle("active");
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
     }
-
-    const urlParams = new URLSearchParams(window.location.search);
-    const successMsg = urlParams.get('success');
-    if (successMsg) {
-      alert(successMsg);
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
     }
   </script>
 
