@@ -35,7 +35,7 @@
     }
 
     .logo-center img {
-      height: 70px;
+      height: 120px;
     }
 
     .left-icon {
@@ -47,11 +47,12 @@
       display: flex;
       align-items: center;
       gap: 20px;
+      transform: translateX(-20px);
     }
 
     .icon {
-      width: 24px;
-      height: 24px;
+      width: 30px;
+      height: 30px;
     }
 
     .sidebar {
@@ -188,9 +189,7 @@
 <body>
 
   <div class="custom-header">
-    <div class="left-icon" onclick="toggleSidebar()">
-      &#9776;
-    </div>
+    <div class="left-icon" onclick="toggleSidebar()">&#9776;</div>
     <div class="logo-center">
       <img src="twins-logo.png" alt="Twins Logo" />
     </div>
@@ -203,9 +202,11 @@
   <div class="sidebar" id="sidebar">
     <span class="close-btn" onclick="toggleSidebar()">&times;</span>
     <img src="twins-logo-white.png" alt="Sidebar Logo" />
-    <a href="#">الرئيسية</a>
+    <a href="index.html">الرئيسية</a>
     <a href="#">أعمالنا</a>
     <a href="#">تواصل معنا</a>
+    <a href="#">عروضنا</a>
+    <a href="about.html">من نحن</a>
   </div>
 
   <div class="offer-strip-vertical">
