@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TWINS Neon Editor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+    .top-banner {
+      background-color: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .top-banner img {
+      height: 40px;
+    }
+    .preview-box {
+      position: relative;
+      background-color: #2b2b2b;
+      text-align: center;
+      padding: 60px 20px;
+      color: #ff8ee8;
+      font-size: 48px;
+      font-family: Arial, sans-serif;
+      text-shadow: 0 0 25px #ff8ee8;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+    .toggle {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: #ddd;
+      border-radius: 20px;
+      display: flex;
+      overflow: hidden;
+      font-size: 14px;
+    }
+    .toggle span {
+      padding: 5px 10px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .on {
+      background-color: #8BC34A;
+      color: #000;
+    }
+    .off {
+      background-color: #444;
+      color: #fff;
+    }
+    .discount-box {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background-color: #e63946;
+      color: white;
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+    .section {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 20px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    .section h2 {
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+    }
+    .section h2 span {
+      background-color: #6c63ff;
+      color: white;
+      border-radius: 5px;
+      padding: 2px 8px;
+      margin-right: 8px;
+    }
+    .section input, .section select {
+      width: 100%;
+      margin-top: 10px;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .quote {
+      text-align: left;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #777;
+    }
+    .quote a {
+      color: #6c63ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .color-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .color-swatch {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+    }
+    .rgb-description {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-banner">
+    <img src="https://i.imgur.com/zr4L2Z7.png" alt="TWINS Logo">
+  </div>
+
+  <div class="preview-box">
+    <div class="toggle">
+      <span class="on">ON</span>
+      <span class="off">OFF</span>
+    </div>
+    <div class="discount-box">Save 10% with code: <strong>SHINE10</strong></div>
+    Your Text
+  </div>
+
+  <div class="section">
+    <h2><span>1</span>ENTER YOUR TEXT</h2>
+    <p>Create your own stunning Custom Neon sign in a few simple steps. Scroll down to continue.</p>
+    <input type="text" placeholder="ENTER TEXT HERE
+Press Enter/Return for a new line">
+    <div class="quote">Looking for a logo? <a href="#">Get a quote</a></div>
+  </div>
+
+  <div class="section">
+    <h2><span>2</span>FONT</h2>
+    <p>Pick from over 50 typefaces. Prices vary by the amount of LED neon required.</p>
+    <select>
+      <option>Barcelona</option>
+      <option>Martita</option>
+      <option>Blythe</option>
+      <option>Miss Stanfort</option>
+    </select>
+  </div>
+
+  <div class="section">
+    <h2><span>3</span>COLOR</h2>
+    <div class="color-options">
+      <div class="color-swatch" style="background-color: #fffdd0;"></div>
+      <div class="color-swatch" style="background-color: #eeeeee;"></div>
+      <div class="color-swatch" style="background-color: #fff44f;"></div>
+      <div class="color-swatch" style="background-color: #ffd700;"></div>
+      <div class="color-swatch" style="background-color: #ffa500;"></div>
+      <div class="color-swatch" style="background-color: #ff6666;"></div>
+      <div class="color-swatch" style="background-color: #ff0000;"></div>
+      <div class="color-swatch" style="background-color: #ff69b4;"></div>
+      <div class="color-swatch" style="background-color: #ffb6c1;"></div>
+      <div class="color-swatch" style="background-color: #ff33cc; border: 3px solid blue;"></div>
+      <div class="color-swatch" style="background-color: #800080;"></div>
+      <div class="color-swatch" style="background-color: #0000cd;"></div>
+      <div class="color-swatch" style="background-color: #87cefa;"></div>
+      <div class="color-swatch" style="background-color: #00bfff;"></div>
+      <div class="color-swatch" style="background-color: #20b2aa;"></div>
+      <div class="color-swatch" style="background-color: #98fb98;"></div>
+      <div class="color-swatch" style="background-color: #32cd32;"></div>
+      <div class="color-swatch" style="background-color: #006400;"></div>
+    </div>
+    <div class="rgb-description">
+      RGB COLOR CHANGING<br>
+      <span style="font-weight: normal;">Multiple colors with static and dynamic modes</span>
+    </div>
+  </div>
+
+</body>
+</html>
