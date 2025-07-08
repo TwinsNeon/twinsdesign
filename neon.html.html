@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -138,14 +137,13 @@
       <span class="off">OFF</span>
     </div>
     <div class="discount-box">Save 10% with code: <strong>SHINE10</strong></div>
-    Your Text
+    <h1 id="neonText">Your Text</h1>
   </div>
 
   <div class="section">
     <h2><span>1</span>ENTER YOUR TEXT</h2>
     <p>Create your own stunning Custom Neon sign in a few simple steps. Scroll down to continue.</p>
-    <input type="text" placeholder="ENTER TEXT HERE
-Press Enter/Return for a new line">
+    <input type="text" id="textInput" placeholder="ENTER TEXT HERE. Press Enter/Return for a new line">
     <div class="quote">Looking for a logo? <a href="#">Get a quote</a></div>
   </div>
 
@@ -187,6 +185,15 @@ Press Enter/Return for a new line">
       <span style="font-weight: normal;">Multiple colors with static and dynamic modes</span>
     </div>
   </div>
+
+  <script>
+    const input = document.getElementById("textInput");
+    const neonText = document.getElementById("neonText");
+
+    input.addEventListener("input", function () {
+      neonText.textContent = input.value || "Your Text";
+    });
+  </script>
 
 </body>
 </html>
